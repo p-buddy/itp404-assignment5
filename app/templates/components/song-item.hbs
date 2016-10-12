@@ -1,0 +1,38 @@
+<ul class="list-group" style="margin-left:10px; width: 400px" >
+<h3 class="tag tag-default"> <span class="label label-primary">{{song.title}} </span></h3>
+<li class="list-group-item">Song Price: ${{song.price}}</li>
+<br>
+<li class="list-group-item">Plays: {{song.playCount}}</li>
+<br>
+{{#if isPopular}}
+<li class="list-group-item"><img style="width: 25px; height: 25px;"src="http://www.primusdatabase.com/images/6/61/Icon_Smoke_%26_Fire.png">
+<strong>Hot Track</strong>
+</li>
+<br>
+
+{{!-- {{else}}
+Underground Track
+<img style="width: 50px; height: 50px;"src="http://icons.veryicon.com/png/System/Android%201/Christmas%20snowflake.png">
+<br> --}}
+{{/if}}
+
+{{#if checkPrice}}
+<li class="list-group-item"><strong>$$ </strong></li>
+<br>
+
+{{else}}
+<li class="list-group-item"><strong>$ </strong></li>
+<br>
+{{/if}}
+
+{{#if liked}}
+<li class="list-group-item">
+  <i onclick={{action 'unlike'}} class="fa fa-thumbs-up" aria-hidden="true" style="color:#1976d2; font-size: 24px" ></i>
+</li>
+{{else}}
+<li class="list-group-item">
+<i onclick={{action 'like'}} class="fa fa-thumbs-up" aria-hidden="true" style="color:grey; font-size: 24px"></i>
+</li>
+{{/if}}
+
+</ul>
